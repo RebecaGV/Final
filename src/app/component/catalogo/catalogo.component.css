@@ -1,0 +1,44 @@
+*{
+    font-family: 'Italianno', cursive;
+    font-size: 20px;
+    
+}
+.box{
+    display: -webkit-flex;
+   display: flex;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   flex: 1 1 auto;
+   justify-content: center;
+   align-items: start;
+
+
+}
+.mat-card-title{
+    font-size: 40px;
+    color: brown;
+    margin-left: auto;
+    margin-left: auto;
+}
+
+.uno{
+    width: 200px;
+}
+.img {
+    width: 250px;
+    margin-bottom: 18%;
+    
+    
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+    
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+    
+  }
+  
+  

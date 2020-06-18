@@ -1,0 +1,38 @@
+<!--<div style="background-color: #ffffb3; padding-top: 20px;">
+<div class="card-columns m-5 animated fadeIn" >
+
+    <div *ngFor="let im of this.images"class="card puntero">
+        <img [src]="im.src" class="card-img-top" alt="" style="padding: 8px;">
+        <div class="card-body">
+            <h5 class="card-title" style="color: green; font-size: 20px;">{{im.precio}}</h5>
+            <p class="card-text">
+                <span>{{im.des}}</span>
+            </p>
+        </div>
+    </div>
+
+</div>
+</div>-->
+<div class="box">
+<div *ngFor="let im of this.images"class="card puntero">
+<div class="uno">
+  <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{im.des}}</mat-card-title>
+    <mat-card-subtitle>{{im.precio}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="im.src" alt="">
+  
+  <mat-card-actions>
+    <a href=""><mat-icon aria-label="Side nav toggle icon">Comprar</mat-icon></a>
+    
+  </mat-card-actions>
+</mat-card>
+
+</div>
+</div>
+
+
+
+</div>

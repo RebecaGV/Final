@@ -1,0 +1,36 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+mat-nav-list a{
+  font-family: 'Pacifico', cursive;
+}
+.sidenav .mat-toolbar {
+  background: inherit;
+  background-color: violet;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 2px gray;
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #80dfff;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px 2px gray;
+}
+.login{
+  flex: 1 1 auto;
+}
+
+.mat-toolbar a{
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,47 @@
+
+<!--<nav class="navbar navbar-expand-md navbar-dark  mb-3">
+  <div class="container-fluid">
+      <a href="#" class="navbar-brand mr-3 marca">XOCOLATL</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+              <a href="#" routerLink="/catalogo" class="nav-item nav-link active">Catalogo</a>
+              <a href="#" routerLink="/about" class="nav-item nav-link active">About</a>
+              <a href="#" routerLink="/contacto" class="nav-item nav-link active">Contacto</a>
+              <a href="#" routerLink="/preguntas" class="nav-item nav-link active">Preguntas</a>
+          </div>
+          <div class="navbar-nav ml-auto">
+              <a href="#" routerLink="/registrer" class="nav-item nav-link active">Register</a>
+              <a href="#" class="nav-item nav-link active">Login</a>
+          </div>
+      </div>
+  </div>    
+</nav>-->
+<div>
+    <mat-toolbar>
+        <span><img src="assets/img/im20.png" width="70" height="70" alt="">XOCOLATL</span>
+    </mat-toolbar>
+</div>
+
+<div>
+<button mat-button [matMenuTriggerFor]="xocolatl">Menu</button>
+
+<mat-menu #xocolatl="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="comprar">Comprar</button>
+  <button mat-menu-item routerLink="/about">Conocenos</button>
+</mat-menu>
+
+<mat-menu #comprar>
+  <button mat-menu-item routerLink="/catalogo" >Catalogo</button>
+  <button mat-menu-item routerLink="/contact">Contacto</button>
+  <button mat-menu-item routerLink="/preguntas">Preguntas</button>
+</mat-menu>
+
+
+
+<button mat-button >Registrate</button>
+<button mat-button >login</button>
+
+</div>
