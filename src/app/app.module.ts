@@ -1,5 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {environment} from '../environments/environment';
+/*FireBase*/
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuthModule,AngularFireAuth} from 'angularfire2/Auth';
+//components etc
+import { LoginComponent } from './component/usuarios/login/login.component';
+import { RegistroComponent } from './component/usuarios/registro/registro.component';
+import { PerfilComponent } from './component/usuarios/perfil/perfil.component';
+import { AngularFirestore,AngularFirestoreDocument} from '@angular/fire/firestore';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,20 +69,42 @@ import {MatTreeModule} from '@angular/material/tree';
 import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
+
+//Servicio
+import {AuthService} from './services/auth.service';
+import { ProductosComponent } from './component/productos/productos.component';
+import { ListaProductosComponent } from './component/productos/lista-productos/lista-productos.component';
+import { SistemaProductoComponent } from './component/productos/sistema-producto/sistema-producto.component';
+import { ProductoService } from './services/producto.service';
+
 @NgModule({
   declarations: [
+
     AppComponent,
-    HomeComponent,
-    CatalogoComponent,
     AboutComponent,
+    CatalogoComponent,
     ContactComponent,
-    PreguntasComponent,
-    NavbarComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
+    ListaProductosComponent,
+    NavbarComponent,
+    MenuComponent,
+    PerfilComponent,
+    PreguntasComponent,
+    ProductosComponent,
     RegistrerComponent,
-    MenuComponent 
+    RegistroComponent,
+    SistemaProductoComponent
   ],
   imports: [
+    
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+   
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -120,7 +153,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     LayoutModule
     
   ],
-  providers: [],
+  providers: [AuthService,AngularFirestore,ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

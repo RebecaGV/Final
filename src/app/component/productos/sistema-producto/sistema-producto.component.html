@@ -1,0 +1,68 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productoService.selectedProduct.$key">
+
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              #name="ngModel"
+              [(ngModel)]="productoService.selectedProduct.name"
+              placeholder="Añadir Producto"
+              >
+          </div>
+          <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="category"
+                #category="ngModel"
+                [(ngModel)]="productoService.selectedProduct.category"
+                placeholder="Añadir Categoria"
+                >
+            </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="location"
+              #location="ngModel"
+              [(ngModel)]="productoService.selectedProduct.location"
+              placeholder="Añadir Almacen"
+              >
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                name="price"
+                #price="ngModel"
+                [(ngModel)]="productoService.selectedProduct.price"
+                placeholder="Precio"
+                >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Añadir
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                <i class="fas fa-sync-alt"></i> Limpiar
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
+<div>
+  <hr>
+      <button (click)="logout()" class=" btn-block btn btn-danger">Salir</button>
+
+</div>
