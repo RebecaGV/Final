@@ -1,4 +1,4 @@
-<div class="" style="align-items: center;">
+<div #toRead class="" style="align-items: center;">
     <mat-accordion>
 
         <mat-expansion-panel>
@@ -50,3 +50,4 @@
                     </mat-expansion-panel>
     </mat-accordion>
 </div>
+<app-speak [toRead]="toRead.textContent"></app-speak>

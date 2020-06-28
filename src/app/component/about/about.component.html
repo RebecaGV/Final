@@ -1,3 +1,4 @@
+<div #toRead>
 <div style="align-items: center;">
     <article class="all-browsers">
         <h1>Xocolatl</h1>
@@ -18,3 +19,5 @@
     Se espera de este proyecto además el crecimiento económico de la empresa.            
   </p>
   <img src="/assets/img/im12.jpg" alt="">
+</div>
+<app-speak [toRead]="toRead.textContent"></app-speak>

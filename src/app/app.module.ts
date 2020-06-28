@@ -76,6 +76,7 @@ import { ProductosComponent } from './component/productos/productos.component';
 import { ListaProductosComponent } from './component/productos/lista-productos/lista-productos.component';
 import { SistemaProductoComponent } from './component/productos/sistema-producto/sistema-producto.component';
 import { ProductoService } from './services/producto.service';
+import { SpeakComponent } from './component/speak/speak.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { ProductoService } from './services/producto.service';
     ProductosComponent,
     RegistrerComponent,
     RegistroComponent,
-    SistemaProductoComponent
+    SistemaProductoComponent,
+    SpeakComponent
   ],
   imports: [
     
