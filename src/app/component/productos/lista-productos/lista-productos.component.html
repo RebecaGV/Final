@@ -1,4 +1,4 @@
-<div class="card">
+<div #toRead class="card">
   <div class="card-body">
     <h6 class="text-center">
       Lista de Productos
@@ -22,3 +22,4 @@
     </table>
   </div>
 </div>
+<app-speak [toRead]="toRead.textContent"></app-speak>

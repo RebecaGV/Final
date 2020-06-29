@@ -1,5 +1,5 @@
 
-  <div class="example-container">
+  <div #toRead class="example-container">
     <div>
     <mat-form-field appearance="fill" layout-align="center">
       <mat-label>Usuario</mat-label>
@@ -23,4 +23,5 @@
     <button mat-button layout-align="center">Registrarse</button>
   </div>
   </div>
+  <app-speak [toRead]="toRead.textContent"></app-speak>
 

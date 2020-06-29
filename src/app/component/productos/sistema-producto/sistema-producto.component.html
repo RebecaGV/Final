@@ -1,4 +1,6 @@
-<div class="card mt-5">
+
+<div #toRead>
+  <div class="card mt-5">
   <div class="card-body">
       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
           <!-- TO UPDATE -->
@@ -66,3 +68,5 @@
       <button (click)="logout()" class=" btn-block btn btn-danger">Salir</button>
 
 </div>
+</div>
+<app-speak [toRead]="toRead.textContent"></app-speak>

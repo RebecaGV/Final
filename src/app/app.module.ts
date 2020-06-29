@@ -76,9 +76,13 @@ import { ProductosComponent } from './component/productos/productos.component';
 import { ListaProductosComponent } from './component/productos/lista-productos/lista-productos.component';
 import { SistemaProductoComponent } from './component/productos/sistema-producto/sistema-producto.component';
 import { ProductoService } from './services/producto.service';
+<<<<<<< HEAD
 import {HttpClientModule} from '@angular/common/http';
 import {MessageService} from './services/message.service';
 import { from } from 'rxjs';
+=======
+import { SpeakComponent } from './component/speak/speak.component';
+>>>>>>> 3af149e1290c3d9192c7923fcbf63b5f0c566924
 
   @NgModule({
   declarations: [
@@ -98,7 +102,8 @@ import { from } from 'rxjs';
     ProductosComponent,
     RegistrerComponent,
     RegistroComponent,
-    SistemaProductoComponent
+    SistemaProductoComponent,
+    SpeakComponent
   ],
   imports: [
     

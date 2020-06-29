@@ -1,0 +1,32 @@
+<div class="container" style="font-family: Arial, Helvetica, sans-serif; font-size: 18;">
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
+    Lectura
+  </a>
+  <div class="collapse mt-3" id="collapseExample">
+    <div class="card card-body" style="width: 20rem;">
+      <div class="btn-group" role="group" aria-label="grupo1">
+        <button (click)="start()" class="btn btn-dark"> start</button>
+        <button (click)="pause()" class="btn btn-dark"> pause </button>
+        <button (click)="resume()" class="btn btn-dark"> resume </button>
+        <a (click)="changeVoice()" class="btn btn-dark" data-toggle="collapse" href="#collapseVoices" role="button" aria-expanded="false"
+        aria-controls="collapseVoices">Voices</a>
+      </div>
+      <hr>
+      <div *ngIf="sw" class="collapse" id="collapseVoices">
+        <select #langSelect (change)="setLanguage(langSelect.value)" class="form-control">
+          <option value="">Selecciona Voz (opcional)...</option>
+          <option [value]="i" *ngFor="let voice of speechData.voices; let i = index;">
+            {{voice.name}} - {{voice.lang}}
+          </option>
+        </select>
+        <br>
+        <div class="btn-group mt-3" role="group" aria-label="grupo2">
+          <button *ngIf="v>=0.1" (click)="setVolume(v=v-0.1)" class="btn btn-dark"> - </button>
+          <button *ngIf="v!=1" (click)="setVolume(v=v+0.1)" class="btn btn-dark"> + </button>          
+        </div>
+        <label class="btn btn-ligth">{{v}}</label>
+      </div>
+    </div>
+  </div>
+</div>
