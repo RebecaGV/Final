@@ -12,8 +12,8 @@ export class MessageService {
       
       return this.httpClient.post(url,
         {
-          "title": "Found a bug",
-          "body": "I'm having a problem with this."
+          "title": "Soy un email",
+          "body": "Hola"
           
         });
     }

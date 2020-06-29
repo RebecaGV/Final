@@ -7,6 +7,7 @@ import  Speech  from 'speak-tts';
 export class SpeechService {
   speech: any;
   speechData: any;
+  
   result: any;
   html: any;
   ax: boolean = false;
@@ -43,6 +44,9 @@ export class SpeechService {
   }
 
   start(text: string){
+    speechSynthesis.getVoices().forEach(function(voice) {
+      console.log('Hi! My name is ', voice.name);
+   });
     this.result = text;
     console.log(this.result);
     this.speech.speak({
