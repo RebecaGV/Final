@@ -76,8 +76,11 @@ import { ProductosComponent } from './component/productos/productos.component';
 import { ListaProductosComponent } from './component/productos/lista-productos/lista-productos.component';
 import { SistemaProductoComponent } from './component/productos/sistema-producto/sistema-producto.component';
 import { ProductoService } from './services/producto.service';
+import {HttpClientModule} from '@angular/common/http';
+import {MessageService} from './services/message.service';
+import { from } from 'rxjs';
 
-@NgModule({
+  @NgModule({
   declarations: [
 
     AppComponent,
@@ -112,6 +115,7 @@ import { ProductoService } from './services/producto.service';
     MatFormFieldModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -150,10 +154,11 @@ import { ProductoService } from './services/producto.service';
     PortalModule,
     ScrollingModule,
     DragDropModule,
-    LayoutModule
+    LayoutModule,
+    
     
   ],
-  providers: [AuthService,AngularFirestore,ProductoService],
+  providers: [AuthService,AngularFirestore,ProductoService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
