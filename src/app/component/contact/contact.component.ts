@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/services/message.service';
-
+import Swal from 'sweetalert2';
 //import swal from 'sweetalert';
 
 @Component({
@@ -26,6 +26,15 @@ export class ContactComponent {
       console.log(data);
 
     });
+  }
+
+  showswalSuccess(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Correo enviado',
+      text: 'Gracias por contactarnos, pronto recibiras un correo atendiendo tus dudas',
+      footer: '<a href>Contactanos</a>'
+    })
   }
 
 }

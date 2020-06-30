@@ -18,7 +18,7 @@ ruta(){
 }
 logout(){
   this.auth.logoutUser().then((data)=>{
-    this.router.navigate(['home']);
+    this.router.navigate(['']);
 
     });
 
