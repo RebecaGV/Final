@@ -81,6 +81,13 @@ import {MessageService} from './services/message.service';
 import { from } from 'rxjs';
 import { SpeakComponent } from './component/speak/speak.component';
 
+//QR's
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+
+//Gráfica
+import { ChartsModule } from 'ng2-charts';
+import { GraficaComponent } from './component/grafica/grafica.component';
+
   @NgModule({
   declarations: [
 
@@ -100,7 +107,8 @@ import { SpeakComponent } from './component/speak/speak.component';
     RegistrerComponent,
     RegistroComponent,
     SistemaProductoComponent,
-    SpeakComponent
+    SpeakComponent,
+    GraficaComponent
   ],
   imports: [
     
@@ -157,8 +165,8 @@ import { SpeakComponent } from './component/speak/speak.component';
     ScrollingModule,
     DragDropModule,
     LayoutModule,
-    
-    
+    NgxQRCodeModule,
+    ChartsModule
   ],
   providers: [AuthService,AngularFirestore,ProductoService,MessageService],
   bootstrap: [AppComponent]
