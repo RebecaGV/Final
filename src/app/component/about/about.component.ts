@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  youtube = 'https://www.youtube.com/watch?v=92Z6W9vMrJY';
 
   constructor() { }
 
