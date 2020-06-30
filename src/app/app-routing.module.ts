@@ -1,3 +1,4 @@
+import { GraficaComponent } from './component/grafica/grafica.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
@@ -10,6 +11,7 @@ import {RegistroComponent} from './component/usuarios/registro/registro.componen
 import {LoginComponent} from './component/usuarios/login/login.component';
 import {PerfilComponent} from './component/usuarios/perfil/perfil.component';
 import {ProductosComponent} from './component/productos/productos.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
@@ -20,7 +22,8 @@ const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path: 'registro',component:RegistroComponent},
   {path: 'perfil',component:PerfilComponent},
-  {path: 'productos',component:ProductosComponent}
+  {path: 'productos',component:ProductosComponent},
+  {path: 'grafica',component:GraficaComponent}
 ];
 
 @NgModule({
