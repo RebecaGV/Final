@@ -12,8 +12,9 @@ export class MessageService {
       
       return this.httpClient.post(url,
         {
-          "title": "Soy un email",
+          "title": "Soy un becky",
           "body": "Hola"
+
           
         });
     }
