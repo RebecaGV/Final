@@ -18,7 +18,7 @@ export class ContactComponent {
    enviar(nom1:string,asunto1:string,email1:string,mes1:string){
     console.log("enviando peticion");
     
-    const urlapi = `http://localhost:3000/sendemail/`;
+    const urlapi = 'https://us-central1-xocolatl-22f0c.cloudfunctions.net/app';
     console.log(urlapi);
     
     

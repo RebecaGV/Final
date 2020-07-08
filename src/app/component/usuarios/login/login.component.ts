@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
     this.auth.loginEmailUser(this.email, this.password)
       .then((res) => {
         this.onLoginRedirect();
-      }).catch(err => this.showswal());
+      }).catch(err =>
+        { this.showswal()});
   }
 
   showswal(){
