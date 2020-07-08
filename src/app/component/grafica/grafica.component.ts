@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
-import * as pluginAnnotations from 'chartjs-plugin-annotation';
+import * as pluginAnnotations from 'chartjs-plugin-annotation'; 
+import { ProductoService } from './../../services/producto.service';
+import { Producto } from '../../Model/producto';
 
 @Component({
   selector: 'app-grafica',
@@ -9,96 +11,42 @@ import * as pluginAnnotations from 'chartjs-plugin-annotation';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent implements OnInit {
+  productList: Producto[];
 
-  public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Visitas' }
-  ];
-  public lineChartLabels: Label[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-  public lineChartOptions: (ChartOptions & { annotation: any }) = {
-    responsive: true,
-    scales: {
-      // Utilizamos esta estructura vacía como marcador de posición para temas dinámicos.
-      xAxes: [{}],
-      yAxes: [
-        {
-          id: 'y-axis-0',
-          position: 'left',
-        },
-        {
-          id: 'y-axis-1',
-          position: 'right',
-          gridLines: {
-            color: 'rgba(255,0,0,0.3)',
-          },
-          ticks: {
-            fontColor: 'red',
-          }
-        }
-      ]
-    },
-    annotation: {
-      annotations: [
-        {
-          type: 'line',
-          mode: 'vertical',
-          scaleID: 'x-axis-0',
-          value: 'March',
-          borderColor: 'orange',
-          borderWidth: 2,
-          label: {
-            enabled: true,
-            fontColor: 'orange',
-            content: 'LineAnno'
-          }
-        },
-      ],
-    },
-  };
-  public lineChartColors: Color[] = [
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    }
-  ];
+  constructor(public product : ProductoService){}
+
+
+  public lineChartData: any = [{ data: [], label: 'Visitas' }];
+  public lineChartLabels: any=[];// = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
   public lineChartLegend = true;
   public lineChartType = 'line';
+//  public array:any[] = [1,2,3,4,5,6];
   public lineChartPlugins = [pluginAnnotations];
+ // public ChartData: any = [{data: this.array,label: 'hola'}];
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  constructor() { }
+  //constructor() { }
 
   ngOnInit() {
+      this.product.getProducts()
+      .snapshotChanges().subscribe(item => {
+        this.productList = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.productList.push(x as Producto);
+          console.log(this.productList[0].name);
+          });
+          for(let i=0; i<this.productList.length; i++){ 
+            this.lineChartLabels[i] = this.productList[i].name;
+            this.lineChartData[0].data[i] = this.productList[i].price;
+  
+            }
+      });
   }
 
-  public randomize(): void {
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        this.lineChartData[i].data[j] = this.generateNumber(i);
-      }
-    }
-    this.chart.update();
-  }
+
 
   private generateNumber(i: number) {
     return Math.floor((Math.random() * (i < 2 ? 100 : 1000)) + 1);

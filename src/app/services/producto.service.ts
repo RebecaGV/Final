@@ -18,6 +18,7 @@ export class ProductoService {
     return this.productList = this.firebase.list('products');
   }
 
+
   insertProduct(product: Producto)
   {
     this.productList.push({

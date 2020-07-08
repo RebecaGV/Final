@@ -87,6 +87,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 //Gráfica
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from './component/grafica/grafica.component';
+import { GraficoComponent } from './component/grafico/grafico.component';
 
   @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { GraficaComponent } from './component/grafica/grafica.component';
     RegistroComponent,
     SistemaProductoComponent,
     SpeakComponent,
-    GraficaComponent
+    GraficaComponent,
+    GraficoComponent
   ],
   imports: [
     
