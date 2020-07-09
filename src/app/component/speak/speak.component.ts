@@ -13,6 +13,7 @@ export class SpeakComponent implements OnInit {
   v: number = 1;
   speechData;
   sw = false;
+  sww = true;
   
   ngOnInit(){
     console.log('onInit');
@@ -30,10 +31,12 @@ export class SpeakComponent implements OnInit {
     this.spk.start(this.toRead); 
   }
   pause(){
+    this.sww = false;
     this.spk.pause();
   }
   resume(){
     this.spk.resume();
+    this.sww = true;
   }
 
   setVolume(v){

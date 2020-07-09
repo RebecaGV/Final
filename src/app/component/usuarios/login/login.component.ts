@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import Swal from 'sweetalert2';
+import { MenuComponent } from '../../../menu/menu.component'
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   public email: string = '';
   public password: string = '';
-
+  private men: MenuComponent;
   constructor(public auth:AuthService,private router:Router,public afAuth: AngularFireAuth,) {
     console.log("Login component funcionando");
   }
@@ -28,13 +29,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
+    localStorage.setItem('user', this.email);
     this.auth.loginEmailUser(this.email, this.password)
       .then((res) => {
         this.onLoginRedirect();
       }).catch(err =>
         { this.showswal()});
   }
-
+ 
   showswal(){
     Swal.fire({
       icon: 'error',
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginRedirect(): void {
+    this.men.refSec();
     this.router.navigate(['perfil']);
   }
 }

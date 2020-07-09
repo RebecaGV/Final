@@ -87,6 +87,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 //Gráfica
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from './component/grafica/grafica.component';
+import { VideoYTPipe } from './pipes/video-yt.pipe';
+import { LoadingComponent } from './component/shared/loading/loading.component';
 import { GraficoComponent } from './component/grafico/grafico.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -111,7 +113,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SistemaProductoComponent,
     SpeakComponent,
     GraficaComponent,
+
+    VideoYTPipe,
+    LoadingComponent,
+
     GraficoComponent
+
   ],
   imports: [
     
