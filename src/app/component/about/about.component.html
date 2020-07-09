@@ -1,3 +1,4 @@
+
 <div #toRead>
 <div style="align-items: center;">
     <article class="all-browsers">
@@ -9,7 +10,7 @@
       </article>
 </div>
 
-  <p class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/TxHwy-mCAZw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p class="video"><iframe width="560" height="315" [src]="video | videoYT: 'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </p>
   
   <p>Xocolatl es una empresa mexicana dedicada a la venta de chocolate a mayoreo y menudeo, con los más altos estándares de calidad y concentrados en técnicas artesanales. El objetivo de esta página web es, además de ser publicidad, punto de venta, de contacto y un catálogo, es ser una fuente gratuita de información sobre la historia de esta bebida y su impacto en la cultura mexicana.

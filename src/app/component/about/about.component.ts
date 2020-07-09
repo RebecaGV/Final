@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   youtube = 'https://www.youtube.com/watch?v=92Z6W9vMrJY';
+  video = 'TxHwy-mCAZw';
+  sw: boolean = true;
 
-  constructor() { }
+  constructor() { this.sw = true;}
 
   ngOnInit(): void {
   }

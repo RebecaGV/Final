@@ -87,6 +87,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 //Gráfica
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from './component/grafica/grafica.component';
+import { VideoYTPipe } from './pipes/video-yt.pipe';
+import { LoadingComponent } from './component/shared/loading/loading.component';
 
   @NgModule({
   declarations: [
@@ -108,7 +110,9 @@ import { GraficaComponent } from './component/grafica/grafica.component';
     RegistroComponent,
     SistemaProductoComponent,
     SpeakComponent,
-    GraficaComponent
+    GraficaComponent,
+    VideoYTPipe,
+    LoadingComponent
   ],
   imports: [
     

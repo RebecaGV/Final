@@ -16,7 +16,12 @@ export class MenuComponent {
       shareReplay()
     );
   @Input() devicesxS: Boolean;
-
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  session: any;
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.session = localStorage.getItem('user');
+  }
+  refSec(){
+    this.session = localStorage.getItem('user');
+  }
 
 }

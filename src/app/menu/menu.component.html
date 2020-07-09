@@ -3,13 +3,12 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar><a routerLink="/home">Menu</a></mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#" routerLink="/about">Nosotros</a>
       <a mat-list-item href="#" routerLink="/contacto">Contacto</a>
       <a mat-list-item href="#" routerLink="/catalogo">Catalogo</a>
-      <a mat-list-item href="#" routerLink="/preguntas">preguntas</a>
-      
+      <a mat-list-item href="#" routerLink="/preguntas">Preguntas</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,11 +21,13 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span><img src="assets/img/im20.png" width="70" height="70" alt="" style="font-family: 'Pacifico', cursive;">XOCOLATL</span>
+      <span><a routerLink="/home"><img src="assets/img/im20.png" width="70" height="70" alt="" style="font-family: 'Pacifico', cursive;">XOCOLATL</a></span>
       <span class="login"></span>
-        <a href="#" routerLink="/registrer"><mat-icon aria-label="Side nav toggle icon">note_add</mat-icon>
+        <a *ngIf="session == ''" [routerLink]="['/registro']"><mat-icon aria-label="Side nav toggle icon">note_add</mat-icon>
         </a>
-        <a href="#" [routerLink]="['login']"><mat-icon aria-label="Side nav toggle icon">login</mat-icon></a>
+        <a *ngIf="session == ''" [routerLink]="['login']"><mat-icon aria-label="Side nav toggle icon">login</mat-icon></a>
+        <p *ngIf="session != ''">{{session}}</p>
+        <a *ngIf="session != ''" ><mat-icon aria-label="Side nav toggle icon">logout</mat-icon></a>
       
     </mat-toolbar>
     <!-- Add Content Here -->

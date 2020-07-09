@@ -1,16 +1,17 @@
-<div class="container" style="font-family: Arial, Helvetica, sans-serif; font-size: 18;">
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large blue" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
     aria-controls="collapseExample">
-    Lectura
+    <i class="large material-icons">accessibility</i>
   </a>
   <div class="collapse mt-3" id="collapseExample">
     <div class="card card-body" style="width: 20rem;">
       <div class="btn-group" role="group" aria-label="grupo1">
-        <button (click)="start()" class="btn btn-dark"> start</button>
-        <button (click)="pause()" class="btn btn-dark"> pause </button>
-        <button (click)="resume()" class="btn btn-dark"> resume </button>
+        <button *ngIf="sww" (click)="start()" class="btn btn-dark"><mat-icon>play_arrow</mat-icon></button>
+        <button (click)="pause()" class="btn btn-dark"><mat-icon>pause</mat-icon></button>
+        <button *ngIf="!sww" (click)="resume()" class="btn btn-dark"><mat-icon>play_arrow</mat-icon></button>
         <a (click)="changeVoice()" class="btn btn-dark" data-toggle="collapse" href="#collapseVoices" role="button" aria-expanded="false"
-        aria-controls="collapseVoices">Voices</a>
+        aria-controls="collapseVoices"><mat-icon>language</mat-icon></a>
       </div>
       <hr>
       <div *ngIf="sw" class="collapse" id="collapseVoices">
@@ -25,8 +26,9 @@
           <button *ngIf="v>=0.1" (click)="setVolume(v=v-0.1)" class="btn btn-dark"> - </button>
           <button *ngIf="v!=1" (click)="setVolume(v=v+0.1)" class="btn btn-dark"> + </button>          
         </div>
-        <label class="btn btn-ligth">{{v}}</label>
+        <label class="ml-3 mt-2" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">{{v}}</label>
       </div>
     </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

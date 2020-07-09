@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, OnDestroy{
   mediaSub:Subscription;
   deviceXs: boolean;
   constructor(public mediaObserver: MediaObserver){
-    
+    localStorage.setItem('user','');
   }
   ngOnInit(){
     this.mediaSub= this.mediaObserver.media$.subscribe((result: MediaChange)=>{

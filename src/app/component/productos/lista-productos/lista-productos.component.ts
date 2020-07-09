@@ -14,10 +14,12 @@ import { ProductoService } from '../../../services/producto.service';
 })
 export class ListaProductosComponent implements OnInit {
   productList: Producto[];
+  sw: boolean;
 
   constructor(public productService: ProductoService) { }
 
   ngOnInit() {
+    this.sw = true;
     return this.productService.getProducts()
       .snapshotChanges().subscribe(item => {
         this.productList = [];
@@ -26,6 +28,7 @@ export class ListaProductosComponent implements OnInit {
           x["$key"] = element.key;
           this.productList.push(x as Producto);
         });
+        this.sw = false;
       });
   }
 
