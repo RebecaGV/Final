@@ -87,8 +87,12 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 //Gráfica
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from './component/grafica/grafica.component';
+<<<<<<< HEAD
 import { VideoYTPipe } from './pipes/video-yt.pipe';
 import { LoadingComponent } from './component/shared/loading/loading.component';
+=======
+import { GraficoComponent } from './component/grafico/grafico.component';
+>>>>>>> 0d03d9a8353a2bc9d567a3cb8b90eee214d36c4a
 
   @NgModule({
   declarations: [
@@ -111,8 +115,12 @@ import { LoadingComponent } from './component/shared/loading/loading.component';
     SistemaProductoComponent,
     SpeakComponent,
     GraficaComponent,
+<<<<<<< HEAD
     VideoYTPipe,
     LoadingComponent
+=======
+    GraficoComponent
+>>>>>>> 0d03d9a8353a2bc9d567a3cb8b90eee214d36c4a
   ],
   imports: [
     

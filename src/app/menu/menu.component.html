@@ -25,10 +25,15 @@
       <span class="login"></span>
         <a *ngIf="session == ''" [routerLink]="['/registro']"><mat-icon aria-label="Side nav toggle icon">note_add</mat-icon>
         </a>
+<<<<<<< HEAD
         <a *ngIf="session == ''" [routerLink]="['login']"><mat-icon aria-label="Side nav toggle icon">login</mat-icon></a>
         <p *ngIf="session != ''">{{session}}</p>
         <a *ngIf="session != ''" ><mat-icon aria-label="Side nav toggle icon">logout</mat-icon></a>
       
+=======
+        <a href="#" [routerLink]="['login']"><mat-icon aria-label="Side nav toggle icon">login</mat-icon></a>
+        <a href="#" [routerLink]="['login']"><mat-icon aria-label="Side nav toggle icon">[this.name]</mat-icon></a>
+>>>>>>> 0d03d9a8353a2bc9d567a3cb8b90eee214d36c4a
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

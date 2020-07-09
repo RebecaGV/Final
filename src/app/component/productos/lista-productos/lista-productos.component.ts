@@ -27,6 +27,7 @@ export class ListaProductosComponent implements OnInit {
           let x = element.payload.toJSON();
           x["$key"] = element.key;
           this.productList.push(x as Producto);
+          //console.log(this.productList[1]); 
         });
         this.sw = false;
       });
