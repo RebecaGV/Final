@@ -23,10 +23,9 @@
     <mat-card-subtitle>{{im.precio}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image [src]="im.src" alt="">
-  
   <mat-card-actions>
     <a href=""><mat-icon aria-label="Side nav toggle icon">Comprar</mat-icon></a>
-    
+    <div class="center-block"><ngx-qrcode  cssClass = "aclass" [value]="precioQr" errorCorrectionLevel = "M"></ngx-qrcode></div>
   </mat-card-actions>
 </mat-card>
 

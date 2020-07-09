@@ -88,6 +88,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from './component/grafica/grafica.component';
 import { GraficoComponent } from './component/grafico/grafico.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
   @NgModule({
   declarations: [
@@ -168,7 +169,8 @@ import { GraficoComponent } from './component/grafico/grafico.component';
     DragDropModule,
     LayoutModule,
     NgxQRCodeModule,
-    ChartsModule
+    ChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthService,AngularFirestore,ProductoService,MessageService],
   bootstrap: [AppComponent]

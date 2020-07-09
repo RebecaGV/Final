@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from './../../services/producto.service';
+import { Producto } from '../../Model/producto';
 
 @Component({
   selector: 'app-catalogo',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit {
+  productList: Producto[];
+  public precioQr: string = 'null';
+
   public images=[
+
     {src:'/assets/img/im1.jpg',des:'barra',precio:'$20'},
     {src:'/assets/img/im2.jpg',des:'Chocolate2',precio:'$200'},
     {src:'/assets/img/im3.jpg',des:'Chocolate3',precio:'$40'},
@@ -23,9 +29,18 @@ export class CatalogoComponent implements OnInit {
     {src:'/assets/img/im16.jpg',des:'barra',precio:'$22'},
     {src:'/assets/img/im15.jpg',des:'barra',precio:'$20'},
   ];
-  constructor() { }
+  constructor(public product : ProductoService) { }
 
   ngOnInit(): void {
+    this.product.getProducts().snapshotChanges().subscribe(item => {
+      this.productList = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.productList.push(x as Producto);
+        console.log(this.productList[0].name);
+        });
+      this.precioQr = this.productList[0].name;
+    })
   }
-
 }

@@ -38,10 +38,9 @@ export class GraficaComponent implements OnInit {
           this.productList.push(x as Producto);
           console.log(this.productList[0].name);
           });
-          for(let i=0; i<this.productList.length; i++){ 
+        for(let i=0; i<this.productList.length; i++){ 
             this.lineChartLabels[i] = this.productList[i].name;
             this.lineChartData[0].data[i] = this.productList[i].price;
-  
             }
       });
   }
